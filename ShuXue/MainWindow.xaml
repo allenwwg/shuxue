@@ -1,0 +1,47 @@
+﻿<Window x:Class="ShuXue.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShuXue"
+        mc:Ignorable="d"
+        Title="加减法" Height="350" Width="850" FontSize="38" HorizontalAlignment="Center" VerticalAlignment="Center"
+        FocusManager.FocusedElement="{Binding ElementName= tbItemRst}"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+           
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBox Grid.Row="0" Grid.Column="0" Text="{Binding Item1.A}"></TextBox>
+        <TextBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" Text="{Binding Item1.Operator}"></TextBox>
+        <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding Item1.B}"></TextBox>
+        <Label Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center">=</Label>
+        <TextBox Name="tbItemRst" Grid.Row="0" Grid.Column="4" Text="{Binding Item1.C}" ></TextBox>
+        <Label Grid.Row="0" Grid.Column="5" Content="{Binding Item1.CheckRstString}"></Label>
+        
+        <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding Item2.A}"></TextBox>
+        <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Text="{Binding Item2.Operator}"></TextBox>
+        <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Item2.B}"></TextBox>
+        <Label Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center">=</Label>
+        <TextBox Grid.Row="1" Grid.Column="4" Text="{Binding Item2.C}"></TextBox>
+        <Label Grid.Row="1" Grid.Column="5" Content="{Binding Item2.CheckRstString}" ></Label>
+        
+        <Button Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="3" Command="{Binding NextGroupCommand}">下一关(Next)</Button>
+        <Label Grid.Row="2" Grid.Column="3" Content="{Binding StepCnt}" HorizontalAlignment="Center"></Label>
+        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Command="{Binding CheckCommand}">检查(Check)</Button>
+
+        <MediaElement Visibility="Collapsed" Grid.Row="0" Grid.RowSpan="2" Grid.Column="5" Grid.ColumnSpan="2" Source="http://hubblesource.stsci.edu/sources/video/clips/details/images/hst_1.mpg"></MediaElement>
+    </Grid>
+</Window>
