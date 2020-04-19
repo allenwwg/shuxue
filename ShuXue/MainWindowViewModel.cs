@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using System.Windows.Input;
+using System.Diagnostics;
+
 namespace ShuXue
 {
     public class MainWindowViewModel : ViewModelBase
@@ -223,9 +225,10 @@ namespace ShuXue
 
         private int GetRandomInt()
         {
-            var time = DateTime.Now.Ticks;
-            var rd = new Random((int)time);
-            var value = rd.Next(10);
+            var sw = new Stopwatch();
+            //var time = DateTime.Now.Ticks;
+            var rd = new Random(Guid.NewGuid().GetHashCode());
+            var value = rd.Next(15);
             return value;
         }
 
